@@ -41,4 +41,4 @@ print(test_results['usage_model'])
 #show_result(y_test, y_predicted)
 
 with open('eval_results.txt', 'a+') as f:
-    f.write(str(test_results['usage_model']) + '\n')
+    f.write('Mean Absolute Error : ' + str(test_results['usage_model']) + '\n')
