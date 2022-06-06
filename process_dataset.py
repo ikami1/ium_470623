@@ -34,7 +34,7 @@ def plot_loss(history):
     plt.show()
 
 
-energy_data_train = pd.read_csv('Steel_industry_data_train.csv')
+energy_data_train = pd.read_csv('steel_industry_data_train.csv')
 
 energy_data_train, x_train, y_train = process_data_and_get_x_y(energy_data_train)
 

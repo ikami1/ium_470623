@@ -23,7 +23,7 @@ def show_result(x, y):
 
 model = keras.models.load_model('steel_industry_model')
 
-energy_data_test = pd.read_csv('Steel_industry_data_test.csv')
+energy_data_test = pd.read_csv('steel_industry_data_test.csv')
 energy_data_test, x_test, y_test = process_data_and_get_x_y(energy_data_test)
 
 y_predicted = model.predict(x_test)
