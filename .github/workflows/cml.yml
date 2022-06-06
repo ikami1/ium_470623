@@ -1,0 +1,22 @@
+name: train-model
+on: [push]
+jobs:
+  run:
+    runs-on: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+      - uses: iterative/setup-cml@v1
+      - name: Train model
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip3 install pandas
+          pip3 install tensorflow
+          pip3 install matplotlib
+          pip3 install sklearn
+          pip3 install numpy
+          python process_dataset.py
+          python evaluate.py
+          cat eval_results.txt >> results.md
+          cml-send-comment results.md
